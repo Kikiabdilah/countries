@@ -60,20 +60,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
           })
       })
     }
-    fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
-    .then((res) => res.json())
-    .then(([country]) => {
-      flagImage.src = country.flags.svg
-      countryNameH1.innerText = country.name.common
-      population.innerText = country.population.toLocaleString('en-IN')
-      region.innerText = country.region
-      topLevelDomain.innerText = country.tld.join(', ')
-  
-      .catch((error) => {
-        console.error('Error fetching country data:', error);
-      })
   })
-})
 
 themeChanger.addEventListener('click', () => {
   document.body.classList.toggle('dark')
