@@ -5,7 +5,7 @@ const themeChanger = document.querySelector('.theme-changer')
 
 let allCountriesData
 
-fetch('https://api.restcountries.com/countries/v5/all')
+fetch('https://api.restcountries.com/countries/v5')
   .then((res) => res.json())
   .then((data) => {
     renderCountries(data)
