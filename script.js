@@ -5,7 +5,7 @@ const themeChanger = document.querySelector('.theme-changer')
 
 let allCountriesData
 
-fetch('https://restcountries.com/v3.1/all')
+fetch('https://api.restcountries.com/countries/v5/all')
   .then((res) => res.json())
   .then((data) => {
     renderCountries(data)
@@ -13,7 +13,7 @@ fetch('https://restcountries.com/v3.1/all')
   })
 
 filterByRegion.addEventListener('change', (e) => {
-  fetch(`https://restcountries.com/v3.1/region/${filterByRegion.value}`)
+  fetch(`https://api.restcountries.com/countries/v5/region/${filterByRegion.value}`)
     .then((res) => res.json())
     .then(renderCountries)
 })
